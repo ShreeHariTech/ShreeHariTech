@@ -383,22 +383,22 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
                     <!-- Updated form with an id -->
-                    <form action="send_email.php" method="POST">
+                    <form id="contactForm">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
+                                <input type="text" id="name" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" name="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
+                                <input type="email" id="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;" required>
                             </div>
                             <div class="col-12">
-                                <input type="text" name="subject" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
+                                <input type="text" id="subject" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;" required>
                             </div>
                             <div class="col-12">
-                                <textarea name="message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                                <textarea id="message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message" required></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                <button class="btn btn-primary w-100 py-3" type="button" onclick="sendEmail()">Send Message</button>
                             </div>
                         </div>
                     </form>
@@ -498,6 +498,23 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <script>
+        function sendEmail() {
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+            
+            // Construct the mailto URL with subject and body
+            const mailtoLink = `mailto:shreeharitech369@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            )}`;
+            
+            // Open the mailto link, which opens the user's email client
+            window.location.href = mailtoLink;
+        }
+        </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
