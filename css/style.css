@@ -235,7 +235,7 @@ h6,
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(92, 92, 92, 0.7); /* Semi-transparent dark */
+    background: rgba(61, 60, 60, 0.7); /* Semi-transparent dark */
     z-index: 1;
 }
 
