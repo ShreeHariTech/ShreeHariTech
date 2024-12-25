@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://shreeharitech.github.io/ShreeHariTech/atom.xml
