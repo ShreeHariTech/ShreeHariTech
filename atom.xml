@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <!-- Metadata -->
+  <title>Shree Hari Tech - Sitemap</title>
+  <subtitle>Official sitemap of Shree Hari Tech's one-page website</subtitle>
+  <link href="https://shreeharitech.github.io/ShreeHariTech/atom.xml" rel="self"/>
+  <link href="https://shreeharitech.github.io/ShreeHariTech/"/>
+  <updated>2024-12-21T00:00:00Z</updated>
+  <id>https://shreeharitech.github.io/ShreeHariTech/atom</id>
+  <author>
+    <name>Shree Hari Tech</name>
+    <email>shreeharitech369@gmail.com</email>
+  </author>
+
+  <!-- Single Page Entry -->
+  <entry>
+    <title>Shree Hari Tech - Home</title>
+    <link href="https://shreeharitech.github.io/ShreeHariTech/"/>
+    <id>https://shreeharitech.github.io/ShreeHariTech/</id>
+    <updated>2024-12-21T00:00:00Z</updated>
+    <summary>Welcome to Shree Hari Tech - Bridging the gap between innovation and technology.</summary>
+  </entry>
+</feed>
