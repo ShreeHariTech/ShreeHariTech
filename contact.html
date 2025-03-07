@@ -115,144 +115,188 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-#BBE1FA font-sans">
-    <!-- Topbar -->
-    
-
-    <nav class="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
-        <div class="container mx-auto flex flex-wrap items-center justify-between px-6 py-4">
-            <!-- Left Side: Logo -->
-            <div class="flex items-center">
-                <img src="img/tech.png" alt="Shree Hari Tech Logo" class="h-14 w-auto rounded-full mr-3">
-                <span class="text-xl font-extrabold text-gray-800">Shree Hari Tech</span>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#0284c7',
+                    secondary: '#0ea5e9',
+                }
+            }
+        }
+    }
+</script>
+</head>
+<body class="font-sans bg-white">
+<!-- Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="img/tech.png" alt="Shree Hari Tech Logo" class="h-12 w-auto rounded-full">
+                <span class="text-xl font-bold text-gray-800">Shree Hari Tech</span>
             </div>
-    
-            <!-- Right Side: Navigation Links -->
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-800 hover:text-blue-600 transition duration-300 text-sm font-semibold">Home</a>
-                <a href="service.html" class="text-gray-800 hover:text-blue-600 transition duration-300 text-sm font-semibold">Services</a>
-                <a href="about.html" class="text-gray-800 hover:text-blue-600 transition duration-300 text-sm font-semibold">About</a>
-                <a href="contact.html" class="text-gray-800 hover:text-blue-600 transition duration-300 text-sm font-semibold">Contact</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="font-medium text-gray-600 hover:text-primary transition duration-300">Home</a>
+                <a href="service.html" class="font-medium text-gray-600 hover:text-primary transition duration-300">Services</a>
+                <a href="about.html" class="font-medium text-gray-600 hover:text-primary transition duration-300">About</a>
+                <a href="contact.html" class="bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-secondary transition duration-300">Contact Us</a>
             </div>
-    
-            <!-- Mobile Menu Toggle -->
+            
+            <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="menuToggle" class="text-gray-800 focus:outline-none">
+                <button id="menuToggle" class="text-gray-600 focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-    
+        
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden bg-gray-100 text-gray-800 overflow-hidden transition-all duration-300 ease-in-out">
-            <a href="index.html" class="block py-3 px-5 border-b border-gray-300 hover:bg-gray-200 text-sm font-medium">Home</a>
-            <a href="service.html" class="block py-3 px-5 border-b border-gray-300 hover:bg-gray-200 text-sm font-medium">Services</a>
-            <a href="about.html" class="block py-3 px-5 border-b border-gray-300 hover:bg-gray-200 text-sm font-medium">About</a>
-            <a href="contact.html" class="block py-3 px-5 hover:bg-gray-200 text-sm font-medium">Contact</a>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
+            <a href="service.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Services</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
+            <a href="contact.html" class="block py-2 mt-3 bg-primary text-white px-4 py-2 rounded-full font-medium hover:bg-secondary transition duration-300 inline-block">Contact Us</a>
         </div>
-    </nav>
-    <!-- Contact Us Section -->
-    <section class="bg-[#E7EAEE] py-16 mt-10" id="contact">
-        <div class="container mx-auto px-4">
-            <!-- Heading -->
-            <h2 class="text-4xl font-bold text-center">Contact Us</h2>
-            <p class="text-lg text-center  text-[#A1A8B1] mt-4">If You Have Any Query, Feel Free To Contact Us</p>
-            
-            <!-- Contact Details -->
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Mobile Number Card -->
-                <div class="bg-white p-6 rounded-lg shadow-lg flex items-center hover:bg-[#E7EAEE] transition duration-300 ease-in-out">
-                    <i class="fas fa-phone text-3xl mr-4"></i>
-                    <div>
-                        <h3 class="text-xl font-semibold ">Call Us</h3>
-                        <a href="tel:+917623977045" class="hover:text-[#A1A8B1] text-lg">+91 76239 77045</a> 
-                    </div>
+    </div>
+</nav>
+
+
+
+<!-- Contact Us Section -->
+<section class="bg-gray-50 py-16" id="contact">
+    <div class="container mx-auto px-4">
+        <!-- Heading -->
+        <h2 class="text-4xl font-bold text-center text-gray-800">
+            <span class="text-primary">C</span>ontact Us
+        </h2>
+        <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        <p class="text-lg text-center text-gray-600 mt-4">If You Have Any Query, Feel Free To Contact Us</p>
+        
+        <!-- Contact Details -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Phone Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg flex items-center hover:shadow-xl transition duration-300 ease-in-out">
+                <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-phone text-primary"></i>
                 </div>
-                <!-- Email Card -->
-                <div class="bg-white p-6 rounded-lg shadow-lg flex items-center hover:bg-[#E7EAEE] transition duration-300 ease-in-out">
-                    <i class="fas fa-envelope  text-3xl mr-4"></i>
-                    <div>
-                        <h3 class="text-xl font-semibold ">Email Us</h3>
-                        <a href="mailto:shreeharitech369@gmail.com" class=" hover:text-[#A1A8B1] text-lg">shreeharitech369@gmail.com</a>
-                    </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Call Us</h3>
+                    <a href="tel:+1234567890" class="text-gray-600 hover:text-primary transition duration-300 text-lg">+1 (234) 567-890</a> 
                 </div>
             </div>
-    
-            <!-- Contact Form -->
-            <div class="mt-12 mx-auto lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold text-center">Send Us a Message</h3>
-                <form class="mt-6 space-y-6" id="contactForm">
-                    <!-- Name Field -->
-                    <div>
-                        <label for="name" class="block font-medium">Your Name</label>
-                        <input type="text" id="name" name="name" class="w-full mt-2 px-4 py-2 border rounded-lg text-[#122D50] focus:ring-2 focus:ring-[#122D50] focus:outline-none" placeholder="Enter your name" required>
-                    </div>
-                    <!-- Email Field -->
-                    <div>
-                        <label for="email" class="block font-medium">Your Email</label>
-                        <input type="email" id="email" name="email" class="w-full mt-2 px-4 py-2 border rounded-lg text-[#122D50] focus:ring-2 focus:ring-[#122D50] focus:outline-none" placeholder="Enter your email" required>
-                    </div>
-                    <!-- Message Field -->
-                    <div>
-                        <label for="message" class="block font-medium">Your Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full mt-2 px-4 py-2 border rounded-lg text-[#122D50] focus:ring-2 focus:ring-[#122D50] focus:outline-none" placeholder="Enter your message" required></textarea>
-                    </div>
-                    <!-- Submit Button -->
-                    <button type="submit" class="w-full bg-[#122D50] text-white py-2 px-4 rounded-lg hover:bg-[#A1A8B1] transition duration-300">Send Message</button>
-                </form>
+            <!-- Email Card -->
+            <div class="bg-white p-6 rounded-lg shadow-lg flex items-center hover:shadow-xl transition duration-300 ease-in-out">
+                <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-envelope text-primary"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Email Us</h3>
+                    <a href="mailto:info@techtrends.com" class="text-gray-600 hover:text-primary transition duration-300 text-lg">info@techtrends.com</a>
+                </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Footer Section -->
-<footer class="bg-black text-white py-16">
+
+        <!-- Contact Form -->
+        <div class="mt-12 mx-auto lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold text-center text-gray-800">Send Us a Message</h3>
+            <form class="mt-6 space-y-6" id="contactForm">
+                <!-- Name Field -->
+                <div>
+                    <label for="name" class="block font-medium text-gray-700">Your Name</label>
+                    <input type="text" id="name" name="name" class="w-full mt-2 px-4 py-2 border rounded-lg text-gray-700 focus:ring-2 focus:ring-primary focus:border-primary focus:outline-none" placeholder="Enter your name" required>
+                </div>
+                <!-- Email Field -->
+                <div>
+                    <label for="email" class="block font-medium text-gray-700">Your Email</label>
+                    <input type="email" id="email" name="email" class="w-full mt-2 px-4 py-2 border rounded-lg text-gray-700 focus:ring-2 focus:ring-primary focus:border-primary focus:outline-none" placeholder="Enter your email" required>
+                </div>
+                <!-- Message Field -->
+                <div>
+                    <label for="message" class="block font-medium text-gray-700">Your Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full mt-2 px-4 py-2 border rounded-lg text-gray-700 focus:ring-2 focus:ring-primary focus:border-primary focus:outline-none" placeholder="Enter your message" required></textarea>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-secondary transition duration-300">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-16">
     <div class="container mx-auto px-4">
         <!-- Footer Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- About Us Section -->
             <div>
-                <h3 class="text-lg font-semibold text-white">About Us</h3>
+                <h3 class="text-lg font-semibold text-white border-b border-gray-700 pb-2">About Us</h3>
                 <p class="text-gray-400 mt-4">
-                    Shree Hari Tech is a leading provider of tech solutions. We specialize in delivering high-quality services tailored to your needs.
+                    Tech Trends is a leading provider of tech solutions. We specialize in delivering high-quality services tailored to your needs.
                 </p>
             </div>
 
             <!-- Quick Links Section -->
             <div>
-                <h3 class="text-lg font-semibold text-white">Quick Links</h3>
+                <h3 class="text-lg font-semibold text-white border-b border-gray-700 pb-2">Quick Links</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="index.html" class="text-gray-400 hover:text-blue-500">Home</a></li>
-                    <li><a href="service.html" class="text-gray-400 hover:text-blue-500">Services</a></li>
-                    <li><a href="about.html" class="text-gray-400 hover:text-blue-500">About Us</a></li>
-                    <li><a href="contact.html" class="text-gray-400 hover:text-blue-500">Contact Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-primary transition duration-300">Home</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-primary transition duration-300">Services</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-primary transition duration-300">About Us</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-primary transition duration-300">Contact Us</a></li>
                 </ul>
             </div>
 
             <!-- Contact Us Section -->
             <div>
-                <h3 class="text-lg font-semibold text-white">Contact Us</h3>
+                <h3 class="text-lg font-semibold text-white border-b border-gray-700 pb-2">Contact Us</h3>
                 <ul class="mt-4 space-y-2">
                     <li class="flex items-center">
-                        <i class="fas fa-phone-alt text-blue-500 mr-3"></i>
-                        <a href="tel:+917623977045" class="text-gray-400 hover:text-blue-500">+91 76239 77045</a>
+                        <i class="fas fa-phone-alt text-primary mr-3"></i>
+                        <a href="tel:+1234567890" class="text-gray-400 hover:text-primary transition duration-300">+1 (234) 567-890</a>
                     </li>
                     <li class="flex items-center">
-                        <i class="fas fa-envelope text-blue-500 mr-3"></i>
-                        <a href="mailto:shreeharitech369@gmail.com" class="text-gray-400 hover:text-blue-500">shreeharitech369@gmail.com</a>
+                        <i class="fas fa-envelope text-primary mr-3"></i>
+                        <a href="mailto:info@techtrends.com" class="text-gray-400 hover:text-primary transition duration-300">info@techtrends.com</a>
+                    </li>
+                    <li class="flex items-center mt-2">
+                        <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                        <span class="text-gray-400">New York, NY</span>
                     </li>
                 </ul>
             </div>
 
             <!-- Social Media Section -->
             <div>
-                <h3 class="text-lg font-semibold text-white">Follow Us</h3>
+                <h3 class="text-lg font-semibold text-white border-b border-gray-700 pb-2">Follow Us</h3>
                 <div class="flex mt-4 space-x-4">
-                    <a href="https://www.instagram.com/shreeharitech/" target="_blank" class="text-gray-400 hover:text-pink-500">
+                    <a href="#" class="text-gray-400 hover:text-pink-500 transition duration-300">
                         <i class="fab fa-instagram fa-lg"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/shreehari-tech-b94b8a336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-gray-400 hover:text-blue-700">
+                    <a href="#" class="text-gray-400 hover:text-blue-700 transition duration-300">
                         <i class="fab fa-linkedin fa-lg"></i>
                     </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-800 transition duration-300">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="mt-6">
+                    <h4 class="text-sm font-medium text-gray-300">Subscribe to our newsletter</h4>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-800 text-gray-200 rounded-l focus:outline-none w-full">
+                        <button class="bg-primary text-white px-4 py-2 rounded-r hover:bg-secondary transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,11 +306,21 @@
 
         <!-- Copyright Section -->
         <div class="mt-8 text-center text-gray-500">
-            <p>&copy; 2024 Shree Hari Tech. All rights reserved.</p>
+            <p>&copy; 2025 Tech Trends. All rights reserved.</p>
         </div>
     </div>
 </footer>
+
 <script>
+    // Toggle Mobile Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Form submission handler
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent form from refreshing the page
 
@@ -276,20 +330,9 @@
         const message = document.getElementById('message').value;
 
         // Use a mailto link to open the default email client
-        const mailtoLink = `mailto:shreeharitech369@gmail.com?subject=Message from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
+        const mailtoLink = `mailto:info@techtrends.com?subject=Message from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
         window.location.href = mailtoLink;
     });
 </script>
-    <script>
-        // Toggle Mobile Menu
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-    
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-    </body>
-    
-    </html>
-    
+</body>
+</html>

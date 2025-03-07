@@ -160,6 +160,7 @@
     .animate-cloud-3 {
         animation: curlAnimation3 7s infinite ease-in-out;
     }
+    
 
     </style>
 
@@ -167,249 +168,283 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-#BBE1FA font-sans">
-    <!-- Topbar -->
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#0284c7',
+                    secondary: '#0ea5e9',
+                    dark: '#1e293b',
+                    light: '#f8fafc'
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif']
+                }
+            }
+        }
+    }
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     
-
-    <nav class="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
-        <div class="container mx-auto flex flex-wrap items-center justify-between px-6 py-4">
-            <!-- Left Side: Logo -->
-            <div class="flex items-center">
-                <img src="img/tech.png" alt="Shree Hari Tech Logo" class="h-14 w-auto rounded-full mr-3">
-                <span class="text-xl font-extrabold text-gray-800">Shree Hari Tech</span>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+<!-- Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="img/tech.png" alt="Shree Hari Tech Logo" class="h-12 w-auto rounded-full">
+                
             </div>
-    
-            <!-- Right Side: Navigation Links -->
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-800 hover:text-blue-600 transition duration-300 text-sm font-semibold">Home</a>
-                <a href="service.html" class="text-gray-800 hover:text-blue-600 transition duration-300 text-sm font-semibold">Services</a>
-                <a href="about.html" class="text-gray-800 hover:text-blue-600 transition duration-300 text-sm font-semibold">About</a>
-                <a href="contact.html" class="text-gray-800 hover:text-blue-600 transition duration-300 text-sm font-semibold">Contact</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="font-medium text-gray-600 hover:text-primary transition duration-300">Home</a>
+                <a href="service.html" class="font-medium text-gray-600 hover:text-primary transition duration-300">Services</a>
+                <a href="about.html" class="font-medium text-gray-600 hover:text-primary transition duration-300">About</a>
+                <a href="contact.html" class="bg-primary text-white px-5 py-2 rounded-full font-medium hover:bg-secondary transition duration-300">Contact Us</a>
             </div>
-    
-            <!-- Mobile Menu Toggle -->
+            
+            <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="menuToggle" class="text-gray-800 focus:outline-none">
+                <button id="menuToggle" class="text-gray-600 focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-    
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden bg-gray-100 text-gray-800 overflow-hidden transition-all duration-300 ease-in-out">
-            <a href="index.html" class="block py-3 px-5 border-b border-gray-300 hover:bg-gray-200 text-sm font-medium">Home</a>
-            <a href="service.html" class="block py-3 px-5 border-b border-gray-300 hover:bg-gray-200 text-sm font-medium">Services</a>
-            <a href="about.html" class="block py-3 px-5 border-b border-gray-300 hover:bg-gray-200 text-sm font-medium">About</a>
-            <a href="contact.html" class="block py-3 px-5 hover:bg-gray-200 text-sm font-medium">Contact</a>
-        </div>
-    </nav>
-    
-    
-    
-
-    <div class="relative h-auto md:h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16" id="index">
-        <!-- Content Section (Left Side) -->
-        <div class="flex-1 text-center md:text-left mt-10 space-y-8">
-            <!-- Title -->
-            <h1 class="text-4xl mt-20  md:text-6xl font-extrabold tracking-wide leading-tight drop-shadow-lg">
-                Welcome to Shree Hari Tech
-            </h1>
-            <!-- Subtitle -->
-            <p class="text-lg md:text-xl leading-relaxed drop-shadow-md">
-                Bridging the gap between innovation and technology. <br>
-                We craft cutting-edge solutions tailored to your dreams. <br>
-                <span class="font-semibold">Create. Innovate. Succeed.</span>
-            </p>
-            <!-- Call-to-Action Button -->
-            <div>
-                <a href="contact.html" 
-                   class="bg-white text-gray-800 py-3 px-8 border border-gray-300 rounded-lg shadow-sm text-lg font-medium hover:bg-gray-100 hover:text-gray-900 transition duration-300 ease-in-out transform hover:scale-105">
-                    Get Started >
-                </a>
-            </div>
-        </div>
         
-        <!-- Image Section (Right Side) -->
-        <div class="flex-1 p-6 mt-8 md:mt-0">
-            <img src="img/index.svg" alt="Shree Hari Tech" class="w-full h-auto md:h-full object-cover rounded-lg shadow-lg">
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+            <a href="#home" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Home</a>
+            <a href="service.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Services</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">About</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-primary transition duration-300">Contact</a>
         </div>
     </div>
-    
-    
-    
+</nav>
 
-
-<!-- Our Service Section -->
-<section class="py-16 " id="services">
+<!-- Hero Section -->
+<section id="home" class="bg-gradient-to-r from-blue-50 to-indigo-50 pt-20 pb-16">
     <div class="container mx-auto px-4">
-        <!-- Title -->
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-[#333333]">Our Services</h2>
-            <p class="text-lg text-[#666666] mt-4">We provide high-quality solutions tailored to your business needs</p>
-        </div>
-
-        <!-- Service Layout (Left Column: Services, Right Column: Image) -->
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
-            
-            <!-- Left Column: Services -->
-            <div class="w-full lg:w-1/2 space-y-10">
-                <!-- Service 1: Web Development -->
-                <div class="flex items-start space-x-4">
-                    <div class="text-4xl text-[#333333]">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-[#333333]">Web Development</h3>
-                        <p class="text-[#666666] mt-2">Creating responsive, user-friendly websites to enhance your online presence and performance.</p>
-                    </div>
-                </div>
-
-                <!-- Service 2: Apps Development -->
-                <div class="flex items-start space-x-4">
-                    <div class="text-4xl text-[#333333]">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-[#333333]">Apps Development</h3>
-                        <p class="text-[#666666] mt-2">Developing innovative, high-performance apps to meet your business needs and goals.</p>
-                    </div>
-                </div>
-
-                <!-- Service 3: Desktop Application -->
-                <div class="flex items-start space-x-4">
-                    <div class="text-4xl text-[#333333]">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-[#333333]">Desktop Application</h3>
-                        <p class="text-[#666666] mt-2">Creating fast, dependable desktop apps to make your business tasks easier.</p>
-                    </div>
-                </div>
-
-                <!-- Service 4: UI/UX Design -->
-                <div class="flex items-start space-x-4">
-                    <div class="text-4xl text-[#333333]">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-[#333333]">UI/UX Design</h3>
-                        <p class="text-[#666666] mt-2">Creating easy-to-use designs that improve how users interact with your website or app.</p>
-                    </div>
+        <div class="flex flex-col-reverse md:flex-row items-center">
+            <!-- Content -->
+            <div class="md:w-1/2 text-center md:text-left mt-10 md:mt-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
+                    Welcome to <span class="text-primary">Shree Hari Tech</span>
+                </h1>
+                <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                    Bridging the gap between innovation and technology.<br>
+                    We craft cutting-edge solutions tailored to your dreams.
+                </p>
+                <p class="mt-2 text-lg font-semibold text-gray-700">
+                    Create. Innovate. Succeed.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="contact.html" class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-secondary transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        Get Started
+                    </a>
+                    <a href="#services" class="bg-white text-primary px-8 py-3 rounded-full font-medium border border-primary hover:bg-blue-50 transition duration-300">
+                        Our Services
+                    </a>
                 </div>
             </div>
-
-            <!-- Right Column: Image -->
-            <div class="w-full lg:w-1/2">
-                <img src="img/service.svg" alt="Services" class="w-full rounded-lg shadow-lg">
+            <!-- Image -->
+            <div class="md:w-1/2">
+                <img src="img/index.svg" alt="Shree Hari Tech" class="w-full max-w-md mx-auto rounded-lg shadow-xl transform hover:scale-105 transition duration-500">
             </div>
         </div>
     </div>
 </section>
 
-<!-- Unique Section with Curly Cloud Shape and Animation -->
-<section class="py-16 bg-[#f5f5f5] text-white mt-20 relative overflow-hidden" id="unique-section">
-    <div class="container mx-auto text-center px-6">
-        <!-- Title -->
-        <h2 class="text-4xl text-black font-extrabold mb-4 tracking-wide leading-tight">Transforming Businesses Digitally</h2>
-        
-        <!-- Description -->
-        <p class="text-lg md:text-xl text-black font-light mb-8 leading-relaxed opacity-90">
+<!-- Services Section -->
+<section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800">Our Services</h2>
+            <div class="w-24 h-1 bg-primary mx-auto mt-4 mb-8 rounded-full"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                We provide high-quality solutions tailored to your business needs
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- Services Cards -->
+            <div class="lg:w-1/2 space-y-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-primary">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <i class="fas fa-laptop-code text-2xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Web Development</h3>
+                            <p class="text-gray-600 mt-2">Creating responsive, user-friendly websites to enhance your online presence and performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-primary">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <i class="fas fa-mobile-alt text-2xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Apps Development</h3>
+                            <p class="text-gray-600 mt-2">Developing innovative, high-performance apps to meet your business needs and goals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-primary">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <i class="fas fa-desktop text-2xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Desktop Application</h3>
+                            <p class="text-gray-600 mt-2">Creating fast, dependable desktop apps to make your business tasks easier.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border-l-4 border-primary">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <i class="fas fa-paint-brush text-2xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">UI/UX Design</h3>
+                            <p class="text-gray-600 mt-2">Creating easy-to-use designs that improve how users interact with your website or app.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="lg:w-1/2 mt-10 lg:mt-0">
+                <img src="img/service.svg" alt="Services" class="w-full rounded-xl shadow-xl">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white relative overflow-hidden">
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl font-bold mb-4">Transforming Businesses Digitally</h2>
+        <p class="text-xl opacity-90 max-w-2xl mx-auto mb-8">
             Expert IT solutions in web, mobile, and desktop development to drive your success.
         </p>
-
-        <!-- Button -->
-        <div class="flex justify-center">
-            <a href="contact.html" 
-               class="bg-transparent border-2 border-[#122D50] text-black py-3 px-8 rounded-full text-lg font-medium hover:bg-[#122D50] hover:text-white transition duration-300 ease-in-out transform hover:scale-105">
-                Contact Us
-            </a>
-        </div>
+        <a href="contact.html" class="inline-block bg-white text-primary font-medium px-8 py-3 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg transform hover:scale-105">
+            Contact Us
+        </a>
     </div>
-
-    <!-- Curly Cloud Shape Effect -->
-    <div class="absolute inset-0 bg-[#A1A8B1]/20 opacity-40 rounded-full animate-cloud-1 w-96 h-96 top-1/2 left-1/4"></div>
-    <div class="absolute inset-0 bg-[#A1A8B1]/30 opacity-50 rounded-full animate-cloud-2 w-72 h-72 top-2/3 left-1/2"></div>
-    <div class="absolute inset-0 bg-[#A1A8B1]/40 opacity-60 rounded-full animate-cloud-3 w-56 h-56 top-3/4 left-2/3"></div>
+    <!-- Background Elements -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full translate-x-1/3 translate-y-1/3"></div>
 </section>
 
-
 <!-- Why Choose Us Section -->
-<section class="py-16 ">
-    <div class="container mx-auto text-center px-4">
-        <!-- Title -->
-        <h2 class="text-2xl font-semibold text-black">Why Choose Us</h2>
-        <h3 class="text-3xl font-bold text-[#333333] mt-4">Empowering Your Success with Expert IT Solutions</h3>
-        
-        <!-- Single column layout (Vertical Alignment) -->
-        <div class="mt-12 space-y-10">
-            <!-- Topic 1 -->
-            <div class="flex flex-col items-center">
-                <div class="text-9xl font-extrabold text-[#333333]">01</div>
-                <div class="mt-4">
-                    <h4 class="text-2xl font-semibold text-[#333333]">Cutting-edge Solutions</h4>
-                    <p class="text-[#666666] mt-2">Delivering the latest technology solutions to drive innovation and business excellence.</p>
-                </div>
+<section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span class="text-primary font-medium">Why Choose Us</span>
+            <h2 class="text-3xl font-bold text-gray-800 mt-2">Empowering Your Success with Expert IT Solutions</h2>
+            <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center">
+                <div class="text-7xl font-bold text-blue-100 mb-4 number-shadow">01</div>
+                <h3 class="text-xl font-semibold text-gray-800">Cutting-edge Solutions</h3>
+                <div class="w-16 h-1 bg-primary mx-auto my-4 rounded-full"></div>
+                <p class="text-gray-600">Delivering the latest technology solutions to drive innovation and business excellence.</p>
             </div>
 
-            <!-- Topic 2 -->
-            <div class="flex flex-col items-center">
-                <div class="text-9xl font-extrabold text-[#333333]">02</div>
-                <div class="mt-4">
-                    <h4 class="text-2xl font-semibold text-[#333333]">On-Time and On Budget</h4>
-                    <p class="text-[#666666] mt-2">We complete projects on time and within budget to meet your goals.</p>
-                </div>
+            <!-- Feature 2 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center">
+                <div class="text-7xl font-bold text-blue-100 mb-4 number-shadow">02</div>
+                <h3 class="text-xl font-semibold text-gray-800">On-Time and On Budget</h3>
+                <div class="w-16 h-1 bg-primary mx-auto my-4 rounded-full"></div>
+                <p class="text-gray-600">We complete projects on time and within budget to meet your goals.</p>
             </div>
 
-            <!-- Topic 3 -->
-            <div class="flex flex-col items-center">
-                <div class="text-9xl font-extrabold text-[#333333]">03</div>
-                <div class="mt-4">
-                    <h4 class="text-2xl font-semibold text-[#333333]">24/7 Support</h4>
-                    <p class="text-[#666666] mt-2">Around-the-clock support to assist you whenever you need help</p>
-                </div>
+            <!-- Feature 3 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center">
+                <div class="text-7xl font-bold text-blue-100 mb-4 number-shadow">03</div>
+                <h3 class="text-xl font-semibold text-gray-800">24/7 Support</h3>
+                <div class="w-16 h-1 bg-primary mx-auto my-4 rounded-full"></div>
+                <p class="text-gray-600">Around-the-clock support to assist you whenever you need help</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="py-16 bg-[#f5f5f5]" id="faq">
+<section id="faq" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-        <!-- Title -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-[#333333]">Frequently Asked Questions</h2>
-            <p class="text-lg text-[#666666] mt-4">Here are some common questions and answers to help you understand our services better</p>
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800">Frequently Asked Questions</h2>
+            <div class="w-24 h-1 bg-primary mx-auto mt-4 mb-8 rounded-full"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Here are some common questions and answers to help you understand our services better
+            </p>
         </div>
 
-        <!-- FAQ Layout: Left (Questions & Answers) + Right (Image) -->
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
-            
-            <!-- Left Column: Questions & Answers -->
-            <div class="w-full lg:w-1/2 space-y-8">
+        <!-- FAQ Layout -->
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- FAQ Items -->
+            <div class="lg:w-1/2 space-y-6">
                 <!-- Question 1 -->
-                <div class="bg-[#f5f5f5] p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold text-[#333333]">What services does your company offer?</h3>
-                    <p class="text-[#666666] mt-4">Our company specializes in software development, system integration, and customer support. We tailor our services to fit the unique needs of businesses across various sectors, helping them grow and succeed in a competitive market.</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                        <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        What services does your company offer?
+                    </h3>
+                    <p class="text-gray-600 mt-4 pl-11">
+                        Our company specializes in software development, system integration, and customer support. We tailor our services to fit the unique needs of businesses across various sectors, helping them grow and succeed in a competitive market.
+                    </p>
                 </div>
 
                 <!-- Question 2 -->
-                <div class="bg-[#f5f5f5] p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold text-[#333333]">How can I contact customer support?</h3>
-                    <p class="text-[#666666] mt-4">You can reach our customer support team by emailing shreeharitech369@gmail.com, calling +91 76239 77045, or using the live chat on our website. Our dedicated team is available 24/7 to assist with any inquiries or technical issues.
-
-                        We’re committed to providing prompt and effective solutions to ensure your satisfaction.</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                        <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-question"></i>
+                        </span>
+                        How can I contact customer support?
+                    </h3>
+                    <p class="text-gray-600 mt-4 pl-11">
+                        You can reach our customer support team by emailing shreeharitech369@gmail.com, calling +91 76239 77045, or using the live chat on our website. Our dedicated team is available 24/7 to assist with any inquiries or technical issues. We're committed to providing prompt and effective solutions to ensure your satisfaction.
+                    </p>
                 </div>
             </div>
 
-            <!-- Right Column: Image -->
-            <div class="w-full lg:w-1/2">
-                <img src="img/faq.svg" alt="FAQ Image" class="w-full rounded-lg shadow-lg">
+            <!-- Image -->
+            <div class="lg:w-1/2 mt-10 lg:mt-0">
+                <img src="img/faq.svg" alt="FAQ" class="w-full rounded-xl shadow-xl">
             </div>
         </div>
     </div>
 </section>
-
-
 
 <!-- Footer Section -->
 <footer class="bg-black text-white py-16">
@@ -418,7 +453,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- About Us Section -->
             <div>
-                <h3 class="text-lg font-semibold text-white">About Us</h3>
+                <h3 class="text-lg font-semibold text-white border-b border-gray-700 pb-2">About Us</h3>
                 <p class="text-gray-400 mt-4">
                     Shree Hari Tech is a leading provider of tech solutions. We specialize in delivering high-quality services tailored to your needs.
                 </p>
@@ -426,41 +461,55 @@
 
             <!-- Quick Links Section -->
             <div>
-                <h3 class="text-lg font-semibold text-white">Quick Links</h3>
+                <h3 class="text-lg font-semibold text-white border-b border-gray-700 pb-2">Quick Links</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><a href="index.html" class="text-gray-400 hover:text-blue-500">Home</a></li>
-                    <li><a href="service.html" class="text-gray-400 hover:text-blue-500">Services</a></li>
-                    <li><a href="about.html" class="text-gray-400 hover:text-blue-500">About Us</a></li>
-                    <li><a href="contact.html" class="text-gray-400 hover:text-blue-500">Contact Us</a></li>
+                    <li><a href="index.html" class="text-gray-400 hover:text-primary transition duration-300">Home</a></li>
+                    <li><a href="service.html" class="text-gray-400 hover:text-primary transition duration-300">Services</a></li>
+                    <li><a href="about.html" class="text-gray-400 hover:text-primary transition duration-300">About Us</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-primary transition duration-300">Contact Us</a></li>
                 </ul>
             </div>
 
             <!-- Contact Us Section -->
             <div>
-                <h3 class="text-lg font-semibold text-white">Contact Us</h3>
+                <h3 class="text-lg font-semibold text-white border-b border-gray-700 pb-2">Contact Us</h3>
                 <ul class="mt-4 space-y-2">
                     <li class="flex items-center">
-                        <i class="fas fa-phone-alt text-blue-500 mr-3"></i>
-                        <a href="tel:+917623977045" class="text-gray-400 hover:text-blue-500">+91 76239 77045</a>
+                        <i class="fas fa-phone-alt text-primary mr-3"></i>
+                        <a href="tel:+917623977045" class="text-gray-400 hover:text-primary transition duration-300">+91 76239 77045</a>
                     </li>
                     <li class="flex items-center">
-                        <i class="fas fa-envelope text-blue-500 mr-3"></i>
-                        <a href="mailto:shreeharitech369@gmail.com" class="text-gray-400 hover:text-blue-500">shreeharitech369@gmail.com</a>
+                        <i class="fas fa-envelope text-primary mr-3"></i>
+                        <a href="mailto:shreeharitech369@gmail.com" class="text-gray-400 hover:text-primary transition duration-300">shreeharitech369@gmail.com</a>
+                    </li>
+                    <li class="flex items-center mt-2">
+                        <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                        <span class="text-gray-400">Ahmedabad, Gujarat</span>
                     </li>
                 </ul>
             </div>
 
             <!-- Social Media Section -->
             <div>
-                <h3 class="text-lg font-semibold text-white">Follow Us</h3>
+                <h3 class="text-lg font-semibold text-white border-b border-gray-700 pb-2">Follow Us</h3>
                 <div class="flex mt-4 space-x-4">
-                    
-                    <a href="https://www.instagram.com/shreeharitech/" target="_blank" class="text-gray-400 hover:text-pink-500">
+                    <a href="https://www.instagram.com/shreeharitech/" target="_blank" class="text-gray-400 hover:text-pink-500 transition duration-300">
                         <i class="fab fa-instagram fa-lg"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/shreehari-tech-b94b8a336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-gray-400 hover:text-blue-700">
+                    <a href="https://www.linkedin.com/in/shreehari-tech-b94b8a336" target="_blank" class="text-gray-400 hover:text-blue-700 transition duration-300">
                         <i class="fab fa-linkedin fa-lg"></i>
                     </a>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="mt-6">
+                    <h4 class="text-sm font-medium text-gray-300">Subscribe to our newsletter</h4>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-800 text-gray-200 rounded-l focus:outline-none w-full">
+                        <button class="bg-primary text-white px-4 py-2 rounded-r hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -475,17 +524,35 @@
     </div>
 </footer>
 
-
-
+<!-- JavaScript -->
 <script>
-    // Toggle Mobile Menu
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+    // Mobile Menu Toggle
+    document.getElementById("menuToggle").addEventListener("click", function() {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
 
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById("mobileMenu").classList.add("hidden");
+            }
+        });
     });
 </script>
+
 </body>
 
 </html>
