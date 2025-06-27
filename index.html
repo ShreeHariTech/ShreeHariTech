@@ -259,6 +259,15 @@
   }
 }
 </script>
+    <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -308,7 +317,7 @@
 </nav>
 
 <!-- Hero Section -->
-<section id="home" class="bg-gradient-to-r from-blue-50 to-indigo-50 pt-20 pb-16">
+<section id="home" class="bg-gradient-to-r from-blue-50 to-indigo-50 min-h-screen flex items-center pt-20 pb-16 relative overflow-hidden">
     <div class="container mx-auto px-4">
         <div class="flex flex-col-reverse md:flex-row items-center">
             <!-- Content -->
@@ -324,7 +333,6 @@
                     Create. Innovate. Succeed.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-                   
                     <a href="contact.html" class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-secondary transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                         Get Free Consultation
                     </a>
@@ -339,8 +347,9 @@
 </section>
 
 
+
 <!-- Services Section -->
-<section id="services" class="py-20 bg-white">
+<section id="services" class="py-20 bg-white" data-aos="fade-up">
     <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="text-center mb-16">
