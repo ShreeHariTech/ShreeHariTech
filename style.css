@@ -2420,3 +2420,318 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVENESS AND DEVICE COMPATIBILITY MATRIX
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Safety check for all resolutions */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Laptops & Mid-size Desktops (max-width: 1280px) */
+@media (max-width: 1280px) {
+  :root {
+    --space-unit: 6px;
+  }
+  .container {
+    padding: 0 32px;
+  }
+}
+
+/* Tablet Landscape & Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  section {
+    padding: 100px 0;
+  }
+  
+  .hero-section {
+    padding-top: 180px;
+    padding-bottom: 80px;
+  }
+
+  .services-split-layout,
+  .why-grid,
+  .faq-split-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services-sticky-sidebar,
+  .why-sidebar,
+  .faq-sidebar {
+    position: relative !important;
+    top: 0 !important;
+    height: auto !important;
+  }
+  
+  .sidebar-visual-blueprint {
+    margin-top: 24px;
+    max-width: 100%;
+    height: 160px;
+  }
+}
+
+/* Tablet Portrait (max-width: 768px) */
+@media (max-width: 768px) {
+  section {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  /* Typography Adjustments */
+  .hero-title {
+    font-size: clamp(2.4rem, 6.5vw, 4rem);
+    line-height: 1.05;
+  }
+
+  .hero-subtext {
+    font-size: 1.1rem;
+    margin-bottom: 36px;
+  }
+
+  /* Services Card Adjustments */
+  .service-editorial-card {
+    padding: 32px;
+    gap: 24px;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  /* Case Studies Spreads */
+  .case-editorial-spread {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .case-title {
+    font-size: 2.2rem;
+  }
+
+  .case-index-large {
+    font-size: 3rem;
+  }
+
+  .case-visual-frame {
+    height: 280px;
+  }
+
+  /* Journey Timeline adjustments */
+  .journey-timeline-wrapper {
+    padding-left: 32px;
+  }
+
+  .timeline-step-item {
+    gap: 24px;
+  }
+
+  .timeline-step-item::before {
+    left: -26px;
+  }
+
+  .timeline-scroll-bar {
+    left: 15px;
+  }
+
+  /* Hide Sticky CTA on tablet and mobile viewports to save screen real estate */
+  .sticky-cta {
+    display: none !important;
+  }
+
+  #whatsapp-fab {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Large Mobile Screens (max-width: 576px) */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* Case Studies Analysis Grid stacking */
+  .case-analysis-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .result-col {
+    border-top: 1px solid var(--grey-border);
+    padding-top: 16px;
+  }
+
+  /* Project Directory list tags adjustment */
+  .dir-col.tags {
+    display: none;
+  }
+
+  .directory-row {
+    grid-template-columns: 40px 1.5fr 1fr 30px;
+  }
+}
+
+/* Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Floating Navbar inner padding */
+  .navbar-inner {
+    padding: 10px 16px;
+  }
+
+  .brand-name {
+    font-size: 0.85rem;
+  }
+
+  .nav-logo {
+    height: 22px;
+  }
+
+  /* Custom CRM Mockup paddings inside panel */
+  .crm-main-panel {
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
+  .crm-min-card {
+    padding: 16px 12px;
+  }
+
+  .card-val {
+    font-size: 1.35rem;
+  }
+
+  .crm-workflow-wrapper {
+    padding: 16px 12px;
+  }
+
+  /* Turn off Stacking Sticky Commitments Cards on mobile */
+  .why-stack-card {
+    position: relative !important;
+    top: 0 !important;
+    padding-bottom: 16px;
+  }
+
+  .stack-card-inner {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .stack-card-inner h3 {
+    font-size: 1.35rem;
+  }
+
+  /* Timeline Roadmap steps circles size */
+  .journey-timeline-wrapper {
+    padding-left: 24px;
+  }
+
+  .timeline-step-item {
+    gap: 16px;
+  }
+
+  .timeline-step-item::before {
+    left: -18px;
+    width: 7px;
+    height: 7px;
+    top: 10px;
+  }
+
+  .timeline-scroll-bar {
+    left: 10px;
+  }
+
+  .step-content h3 {
+    font-size: 1.15rem;
+  }
+
+  /* FAQ panel spacing override */
+  .faq-trigger {
+    grid-template-columns: 30px 1fr 20px;
+    padding: 20px 0;
+  }
+
+  .faq-question {
+    font-size: 0.98rem;
+  }
+
+  /* Form spacing adjustments */
+  .lead-capture-form {
+    gap: 24px;
+  }
+
+  .form-row-two {
+    gap: 24px;
+  }
+
+  /* Modal Dialog panel responsive paddings */
+  .modal-panel {
+    padding: 32px 20px;
+  }
+
+  .modal-close {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+/* Very Small Mobile Screens (max-width: 360px) */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .brand-name {
+    font-size: 0.78rem;
+  }
+
+  .navbar-inner {
+    padding: 8px 12px;
+  }
+
+  .service-editorial-card {
+    padding: 20px 16px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .case-title {
+    font-size: 1.5rem;
+  }
+
+  .directory-row {
+    grid-template-columns: 30px 1fr 30px;
+  }
+
+  .dir-col.category {
+    display: none;
+  }
+}
